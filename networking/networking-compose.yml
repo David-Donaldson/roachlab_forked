@@ -1,6 +1,6 @@
 networks:
-  init-network-setup:
-
+  default:
+    name: init-network-setup
 services:
   npm:
     container_name: nginx-proxy-manager
