@@ -27,11 +27,6 @@ services:
       - './etc-dnsmasq.d:/etc/dnsmasq.d'
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     restart: unless-stopped
-  cloudflared:
-    container_name: cloudflared
-    image: cloudflare/cloudflared:latest
-    command: tunnel --no-autoupdate run --token eyJhIjoiZjUzNGEzMWQxZTRlZDk2YzZhNTllNzk3ODc0OGViODUiLCJ0IjoiNTY5YmFmYWUtNDU0NS00Nzc5LTg0MjEtNzVkYTU5NzFiOGIyIiwicyI6IlpEa3hZamcyTm1NdFptRTROaTAwTVdGaExXSmtPR0V0T1ROa09EWm1aVFUzTXpJMCJ9
-    restart: unless-stopped
 volumes:
   npm:
   pi-hole:
