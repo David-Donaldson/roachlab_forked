@@ -4,7 +4,7 @@ services:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
-      - '80:80'
+      - '83:80'
       - '81:81'
       - '443:443'
     volumes:
@@ -19,10 +19,12 @@ services:
 #      - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
       - "82:80/tcp"
     environment:
-    - DNSMASQ_USER=root
-    - PIHOLE_UID=0
-    - TZ=${TZ}
-    - TZ=${PIHOLE_PWD}
+      - DNSMASQ_USER=root
+      - PIHOLE_UID=0
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Jamaica
+      - PIHOLE_PWD=Changeme
     # Volumes store your data between container upgrades
     volumes:
       - './etc-pihole:/etc/pihole'
